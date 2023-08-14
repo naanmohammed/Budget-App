@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.6"
 
 gem 'pg'
 
+gem 'devise'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
