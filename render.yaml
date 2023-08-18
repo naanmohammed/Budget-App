@@ -7,7 +7,7 @@ services:
   - type: web
     name: app
     env: ruby
-    repo: https://github.com/<your_repo>
+    repo: https://github.com/Budget-App
     branch: main
     startCommand: bundle exec rackup config.ru
     envVars:
