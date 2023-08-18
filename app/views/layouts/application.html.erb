@@ -5,12 +5,45 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/2eac604974.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+  <% if user_signed_in? || request.path.include?('sign_in') %>
+  <nav>
+    <div class="back-icon">
+      <%= yield(:back_link) || :back %>
+    </div>
+    <div class="page-title">
+      <%= content_for?(:title) ? yield(:title) : "" %>
+    </div>
+    <% if user_signed_in? %>
+      <%= button_to destroy_user_session_path, class: 'icon-btn', :method => :delete, data: { turbo_confirm: "Do you want to sign out?" } do %>
+        <i class="fa-solid fa-right-from-bracket" style="color: #ff0000;"></i>
+      <% end %>
+    <% elsif request.path.include?('sign_in') %>
+      <%= button_to new_user_registration_path, class: 'icon-btn', :method => :get do %>
+        <i class="fa-solid fa-user-plus"></i>
+        <% end %>
+    <% end %>
+  </nav>
+<% end %>
+
+    <main>
+    <% if notice.present? || alert.present? %>
+      <div class="notification">
+        <% if notice.present? %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </div>
+    <% end %>
+      <%= yield %>
+    </main>
   </body>
 </html>
