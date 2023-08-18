@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1 class="mt-4">Expenses</h1>
+
+  <div id="expenses">
+    <% @expenses.each do |expense| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <%= render expense %>
+        </div>
+      </div>
+      <%= link_to "Show this expense", expense, class: "btn btn-outline-primary" %>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "New expense", new_category_expense_path, class: "btn btn-primary" %>
+  </div>
+</div>

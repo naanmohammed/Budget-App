@@ -8,7 +8,9 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1 or /expenses/1.json
-  def show; end
+  def show
+    @expense = Expense.find(params[:id])
+  end
 
   # GET /expenses/new
   def new
@@ -21,7 +23,9 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1/edit
-  def edit; end
+  def edit
+    @expense = Expense.find(params[:id])
+  end
 
   # POST /expenses or /expenses.json
   def create

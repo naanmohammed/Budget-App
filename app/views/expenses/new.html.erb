@@ -1,0 +1,8 @@
+<% content_for :title, "#{@category.name}" %>
+<% content_for :back_link, link_to('<i class="fa-solid fa-circle-chevron-left"></i>'.html_safe, category_path(@category)) %>
+
+<section class="reg-container">
+<h2>Add new expense</h2>
+  <%= render "form", expense: @expense %>
+
+</section>
