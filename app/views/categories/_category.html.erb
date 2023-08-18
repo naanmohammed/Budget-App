@@ -1,0 +1,22 @@
+<div id="<%= dom_id category %>" class="card bg-light mb-3">
+  <img src="<%= asset_path(category.icon) %>" alt="Category Icon" style="max-height: 150px; max-width: 500px;" class="card-img-top">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <p><%= category.name %></p>
+        <p class="text-muted"><%= category.created_at.strftime("%d %B %Y") %></p>
+      </div>
+      <p><%= number_to_currency(category.expenses.sum(:amount)) %></p>
+    </div>
+    <% unless current_page?(root_path) || current_page?(categories_path) %>
+    <div class="d-flex justify-content-end mt-3">
+      <a href="<%= edit_category_path(category) %>" class="btn btn-outline-primary me-2">
+        <i class="fa-solid fa-pen-to-square"></i> Edit
+      </a>
+      <%= button_to category, method: :delete, data: { turbo_confirm: "Delete #{category.name} category?" }, class: 'btn btn-outline-danger' do %>
+        <i class="fa-solid fa-trash"></i> Delete
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

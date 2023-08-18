@@ -1,0 +1,28 @@
+<% content_for :title, @category.name %>
+<% content_for :back_link, link_to('<i class="fa-solid fa-circle-chevron-left"></i>'.html_safe, categories_path, class: 'btn btn-outline-dark') %>
+
+<section class="container mt-4">
+  <div class="card mb-4">
+    <div class="card-body">
+      <%= render @category %>
+    </div>
+  </div>
+
+  <% if @expenses.any? %>
+    <% @expenses.each do |expense| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <%= render expense %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="text-center">
+      <p>No expenses yet</p>
+    </div>
+  <% end %>
+
+  <div class="btn-container text-center mt-4">
+    <%= link_to 'Add Expense', new_category_expense_path(@category.id), class: 'btn btn-primary btn-block' %>
+  </div>
+</section>
