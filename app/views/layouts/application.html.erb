@@ -12,24 +12,28 @@
 
   <body>
   <% if user_signed_in? || request.path.include?('sign_in') %>
-  <nav>
-    <div class="back-icon">
-      <%= yield(:back_link) || :back %>
-    </div>
-    <div class="page-title">
-      <%= content_for?(:title) ? yield(:title) : "" %>
-    </div>
-    <% if user_signed_in? %>
-      <%= button_to destroy_user_session_path, class: 'icon-btn', :method => :delete, data: { turbo_confirm: "Do you want to sign out?" } do %>
-        <i class="fa-solid fa-right-from-bracket" style="color: #ff0000;"></i>
-      <% end %>
-    <% elsif request.path.include?('sign_in') %>
-      <%= button_to new_user_registration_path, class: 'icon-btn', :method => :get do %>
-        <i class="fa-solid fa-user-plus"></i>
+    <nav class="d-flex justify-content-between align-items-center">
+      <div class="back-icon">
+        <%= yield(:back_link) || :back %>
+      </div>
+
+      <div class="page-title h4 fw-bold">
+        <%= content_for?(:title) ? yield(:title) : "" %>
+      </div>
+
+      <div>
+        <% if user_signed_in? %>
+          <%= button_to destroy_user_session_path, class: 'btn btn-outline-danger', :method => :delete, data: { turbo_confirm: "Do you want to sign out?" } do %>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          <% end %>
+        <% elsif request.path.include?('sign_in') %>
+          <%= button_to new_user_registration_path, class: 'btn btn-outline-primary', :method => :get do %>
+            <i class="fa-solid fa-user-plus"></i>
+          <% end %>
         <% end %>
-    <% end %>
-  </nav>
-<% end %>
+      </div>
+    </nav>
+  <% end %>
 
     <main>
     <% if notice.present? || alert.present? %>
