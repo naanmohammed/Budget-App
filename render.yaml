@@ -9,7 +9,7 @@ services:
     env: ruby
     repo: https://github.com/<your_repo>
     branch: main
-    runCommand: bundle exec rackup config.ru
+    startCommand: bundle exec rackup config.ru
     envVars:
       - key: RAILS_ENV
         value: production
