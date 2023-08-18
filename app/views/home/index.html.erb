@@ -1,13 +1,11 @@
-<section class="splash-screen-section d-flex flex-column justify-content-center align-items-center">
-  <div class="logo-home">
-    <%= image_tag("logo.png", class: "img-fluid") %>
+<section class="splash-screen-section d-flex flex-column justify-content-center align-items-center mb-2">
+  <div class="logo-home" style="margin-bottom: 200px;">
+    <%= image_tag("logo.png", class: "img-fluid", style: "height: 500px;") %>
   </div>
-  <h1 class="mt-3">Budget Application</h1>
-  <p class="lead text-center mb-4">Track and manage your expenses easily.</p>
   <div class="btn-container mt-4">
     <%= link_to "Login", new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %>
   </div>
-  <div class="btn-container mt-3">
+  <div class="btn-container mt-4">
     <%= link_to "Register", new_user_registration_path, class: 'btn btn-secondary btn-lg btn-block' %>
   </div>
 </section>
