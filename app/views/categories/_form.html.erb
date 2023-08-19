@@ -1,0 +1,31 @@
+<%= form_with(model: category,class: 'form-control') do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="name-field">
+    <%= form.text_field :name, placeholder: 'Enter name of category..' %>
+  </div>
+
+  <%= form.label :icon, "Select an icon", style: "display: block; font-weight: bold; text-align: center;" %>
+  <div class="icon-tiles">
+    <% [["Food", "feeding.webp"], ["Travel", "transportation.webp"], ["Housing", "housing.webp"], ["Health", "healthcare.webp"], ["Education", "education.webp"], ["Entertainment", "entertainment.webp"], ["Clothing", "clothing.webp"], ["Saving", "savings.webp"], ["Other", "miscellaneous.webp"]].each do |icon_data| %>
+      <%= label_tag do %>
+        <%= radio_button_tag "category[icon]", icon_data[1], false, id: icon_data[1] %>
+        <%= image_tag(image_path(icon_data[1]), alt: icon_data[0], style: "max-width: 50px; max-height: 50px;") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="btn-container">
+    <%= form.submit class: 'btn btn-block' %>
+  </div>
+<% end %>

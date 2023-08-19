@@ -1,0 +1,22 @@
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color1: #434b54;
+$text-color2: #86898e;
+$text-color3: #989da2;
+$white: #fff;
+
+.btn-container2 {
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  bottom: 81px;
+  background-color: $primary-color;
+}
+
+.btn-container {
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  bottom: 0;
+  background-color: $secondary-color;
+}

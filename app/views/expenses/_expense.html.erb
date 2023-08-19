@@ -1,0 +1,11 @@
+<div id="<%= dom_id expense %>" class='expense-card'>
+  <div class="expense-group">
+    <div class="expense-info">
+      <p class="expense-name"><%= expense.name %></p>
+
+      <p class="expense-date"><%= expense.created_at.strftime("%e %B %Y at %I:%M%p") %></p>
+    </div>
+    <p class="expense-total-spent"> <%= number_to_currency(expense.amount) %>
+</p>
+  </div>
+</div>
