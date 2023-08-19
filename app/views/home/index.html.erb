@@ -1,11 +1,13 @@
-<section class="splash-screen-section d-flex flex-column justify-content-center align-items-center mb-2">
-  <div class="logo-home" style="margin-bottom: 200px;">
-    <%= image_tag("logo.png", class: "img-fluid", style: "height: 500px;") %>
+<%= stylesheet_link_tag "home_index" %>
+
+<section class='splash-screen-section'>
+  <div class="logo-home">
+    <%= image_tag("logo.png") %>
   </div>
-  <div class="btn-container mt-4">
-    <%= link_to "Login", new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %>
+  <div class='btn-container'>
+    <%= link_to "Login", new_user_session_path, class: 'btn  btn-block' %>
   </div>
-  <div class="btn-container mt-4">
-    <%= link_to "Register", new_user_registration_path, class: 'btn btn-secondary btn-lg btn-block' %>
+  <div class="btn-container2">
+    <%= link_to "Register", new_user_registration_path, class: 'btn btn-block' %>
   </div>
 </section>
