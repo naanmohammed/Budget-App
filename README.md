@@ -7,7 +7,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  <!-- - [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
@@ -69,7 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming soon...]()
+- [Live Site](https://rails-xahp.onrender.com/)
 - Link to video presentation : [Video](https://www.loom.com/share/09626f32858e4a589ecb25d0758da664?sid=c9b40b4c-5bd6-4a9b-b75f-76c13dbf7c1e)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
