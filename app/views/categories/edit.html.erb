@@ -2,9 +2,8 @@
 
 <% content_for :back_link, link_to('<i class="fa-solid fa-circle-chevron-left"></i>'.html_safe, @category) %>
 
-<div>
+<div class="reg-container">
   <h2>Edit <% @category.name %></h2>
   <%= render "form", category: @category %>
 </div>
-
 

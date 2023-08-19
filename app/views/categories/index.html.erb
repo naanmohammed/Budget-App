@@ -1,36 +1,20 @@
 <% content_for :title, "Categories" %>
-<section class="d-flex justify-content-center align-items-center">
-  <div id="categories" class="container text-center">
-    <div class="row">
-      <% if @categories.any? %>
-        <% @categories.each do |category| %>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <%= link_to category, class: 'text-decoration-none' do %>
-              <div class="card bg-light h-100">
-                <div class="card-body">
-                  <div class="d-flex align-items-center">
-                    <img src="<%= asset_path(category.icon) %>" class="card-img-icon me-3">
-                    <div>
-                      <h5 class="card-title mb-0"><%= category.name %></h5>
-                      <small class="text-muted"><%= category.created_at.strftime("%b %d, %Y") %></small>
-                    </div>
-                    <div class="ms-auto">
-                      <span class="text-dark"><%= number_to_currency(category.expenses.sum(:amount)) %></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <div class="col-12 text-white">
-          <p>No categories yet</p>
-        </div>
-      <% end %>
-      <div class="mb-4">
-        <%= link_to "New Category", new_category_path, class: 'btn btn-outline-dark btn-lg' %>
-      </div>
+<section class='categories-section'>
+<div id="categories">
+  <% if @categories.any? %>
+  <% @categories.each do |category| %>
+    <%= link_to category do %>
+      <%= render category %>
+    <% end %>
+  <% end %>
+  <% else %>
+    <div class="no-categories">
+      <p>No categories yet</p>
     </div>
-  </div>
+  <% end %>
+</div>
+
+<div class="btn-container">
+  <%= link_to "New category", new_category_path, class: 'btn btn-block' %>
+</div>
 </section>

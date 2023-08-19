@@ -1,6 +1,8 @@
 <% content_for :title, "New category" %>
 <% content_for :back_link, link_to('<i class="fa-solid fa-circle-chevron-left"></i>'.html_safe, categories_path) %>
 
-<section>
+<section class="reg-container">
+
   <%= render "form", category: @category %>
+
 </section>

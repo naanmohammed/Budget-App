@@ -1,0 +1,109 @@
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color1: #434b54;
+$text-color2: #86898e;
+$text-color3: #989da2;
+$white: #fff;
+
+.category-card {
+  background: $white;
+  padding: 10px 20px;
+  cursor: default;
+  position: relative;
+
+  img {
+    height: 80px;
+    flex-basis: 80px;
+  }
+
+  .category-group {
+    display: flex;
+    flex-basis: 100%;
+    padding-top: 10px;
+    justify-content: space-between;
+
+    .category-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .category-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .category-date {
+        font-size: 0.8rem;
+        color: $text-color3;
+      }
+    }
+
+    .category-total-spent {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.category-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: absolute;
+  right: 20px;
+  top: 55px;
+
+  button,
+  a {
+    background-color: transparent;
+    color: red;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 0 5px 15px;
+    cursor: pointer;
+  }
+}
+
+.no-expenses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5rem;
+  color: $text-color2;
+  margin-top: 30vh;
+}
+
+.expense-card {
+  background: $white;
+  margin: 5px 0;
+  padding: 10px 20px;
+
+  .expense-group {
+    display: flex;
+    flex-basis: 100%;
+    padding-top: 10px;
+    justify-content: space-between;
+
+    .expense-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .expense-name {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .expense-date {
+        font-size: 0.7rem;
+        color: $text-color3;
+      }
+    }
+
+    .expense-total-spent {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+}
